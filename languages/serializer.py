@@ -2,21 +2,21 @@ from rest_framework import serializers
 from.models import Language, Paradigm, Programmer
 
 
-class LanguageSerializer(serializers.ModelSerializer):
+class LanguageSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model=Language
-        fields= ('id','name','paradigm')
+        fields= "__all__"
 
 
-class ParadigmSerializer(serializers.ModelSerializer):
+class ParadigmSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model=Paradigm
-        fields= ('id', 'name')
+        fields= '__all__'
 
 
-class ProgrammerSerializer(serializers.ModelSerializer):
+class ProgrammerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model=Programmer
